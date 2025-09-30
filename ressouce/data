@@ -1,0 +1,15 @@
+clients{client1: LE2, client2: MV2, client3: NP3}
+
+LE2 {
+    "Name" : Lardon,
+    "Fname" : Edouard,
+    "solde" : 1 000 000 000,
+    "retraits" : ,
+    "prelevements" : ,
+}
+
+MV2 {
+    "Name" : Maman,
+    "Fname" : Voltmètre,
+    "solde" : -1 000 000 000
+}
