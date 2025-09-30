@@ -1,6 +1,21 @@
 #différentes fonction : identification, consultation du solde, retirement d'argent, dépot d'argent, quit
 # structure du main : si le client dit ca, marquer tatata (voir fonctions)
 
+virement = ["virement","virment","vrement","irement"]
+sold = ["sold"]
+retrait = ["retait"]
+
+def terminale ():
+    input("What do you want to know about your bank account?\n"
+          "sold\n"
+          "virement\n"
+          "retrait")
+    if input in sold:
+        print(f/"Your sold is {}")
+    if input in virement:
+        print(f/"Your old virement are {}")
+    if input in retrait:
+        print (f/"Your old retrait are {}.")
 
 def ask_identity ():
     input("name : ")
@@ -11,7 +26,8 @@ def consult_sold ():
     pass
 
 def re_ask_identity():
-    pass
+    print("Errors have benn related, can you retry?")
+    return ask_identity
 
 def main(account):
     if ask_identity in identity :
