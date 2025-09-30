@@ -2,15 +2,15 @@
 # structure du main : si le client dit ca, marquer tatata (voir fonctions)
 
 
-def ask_identity :
+def ask_identity ():
     input("name : ")
     input("Fname : ")
     input("password : ")
 
-def consult_sold :
+def consult_sold ():
     pass
 
-def re_ask_identity:
+def re_ask_identity():
     pass
 
 def main(account):
