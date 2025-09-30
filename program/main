@@ -1,14 +1,8 @@
+#différentes fonction : 
+# structure du main : si le client dit ca, marquer tatata
+
+
+
 def main(account):
     if ask_identity true:
         consult_sold(identity)
-
-
-
-
-
-
-
-
-
-
-
