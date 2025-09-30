@@ -1,6 +1,7 @@
 #différentes fonction : identification, consultation du solde, retirement d'argent, dépot d'argent, quit
 # structure du main : si le client dit ca, marquer tatata (voir fonctions)
 
+
 def ask_identity :
     pass
 
@@ -9,3 +10,5 @@ def main(account):
         consult_sold(client_account)
     elif ask_identity not in identity :
         re_ask_identity
+
+# GIULIO CREE LES DEFS
