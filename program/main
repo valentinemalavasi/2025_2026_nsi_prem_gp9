@@ -3,7 +3,9 @@
 
 
 def ask_identity :
-    pass
+    input("name : ")
+    input("Fname : ")
+    input("password : ")
 
 def consult_sold :
     pass
@@ -16,5 +18,5 @@ def main(account):
         consult_sold(client_account)
     elif ask_identity not in identity :
         re_ask_identity
-        
+
 
