@@ -4,5 +4,7 @@
 
 
 def main(account):
-    if ask_identity true:
-        consult_sold(identity)
+    if ask_identity in identity :
+        consult_sold(client_account)
+    elif ask_identity not in identity :
+        re_ask_identity
