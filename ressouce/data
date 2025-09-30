@@ -1,5 +1,5 @@
-
-client1 {
+dico = {"client1": "canard", "client2": "LE", "client3": "MV", "client4": "clients2", "client5": "clients3", "clients6": "NP" }
+canard {
     "Name" : "Canard",
     "Fname" : "Tidak",
     "solde" : 900,
