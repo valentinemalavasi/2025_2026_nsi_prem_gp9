@@ -5,10 +5,16 @@
 def ask_identity :
     pass
 
+def consult_sold :
+    pass
+
+def re_ask_identity:
+    pass
+
 def main(account):
     if ask_identity in identity :
         consult_sold(client_account)
     elif ask_identity not in identity :
         re_ask_identity
+        
 
-# GIULIO CREE LES DEFS
