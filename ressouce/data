@@ -1,15 +1,49 @@
-clients{client1: LE2, client2: MV2, client3: NP3}
 
-LE2 {
-    "Name" : Lardon,
-    "Fname" : Edouard,
-    "solde" : 1 000 000 000,
-    "retraits" : ,
-    "prelevements" : ,
+client1{
+    "Name" : "Canard",
+    "Fname" : "Tidak",
+    "solde" : 900,
+    "retraits" : [] ,
+    "prelevements" : [] ,
+
 }
 
-MV2 {
-    "Name" : Maman,
-    "Fname" : Voltmètre,
-    "solde" : -1 000 000 000
+LE {
+    "Name" : "Lardon",
+    "Fname" : "Edouard",
+    "solde" : 1000000000,
+    "retraits" : [] ,
+    "prelevements" : [] ,
+}
+
+MV {
+    "Name" : "Maman",
+    "Fname" : "Voltmètre",
+    "solde" : -1000000000,
+    "retraits": [],
+    "prelevements" :[],
+}
+
+clients2 {
+    "Name" : "Valence",
+    "Fname" : "Ampèrmètre",
+    "solde" : 31,
+    "retraits": [],
+    "prelevements" :[],
+}
+
+clients3 {
+    "Name" : "Go",
+    "Fname" : "Echecs",
+    "solde" : -15.4,
+    "retraits": [],
+    "prelevements" :[],
+}
+
+NP {
+    "Name" : "Non",
+    "Fname" : "Peut-être",
+    "solde" : -5000,
+    "retraits": [],
+    "prelevements" :[],
 }
