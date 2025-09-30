@@ -1,5 +1,5 @@
-#différentes fonction : 
-# structure du main : si le client dit ca, marquer tatata
+#différentes fonction : identification, consultation du solde, retirement d'argent, dépot d'argent, quit
+# structure du main : si le client dit ca, marquer tatata (voir fonctions)
 
 
 
