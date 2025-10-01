@@ -25,17 +25,27 @@ def ask_identity ():
         return True
 
 
-#cette fonction permet de demander à l'utilisateur de réécrire ces codes s'il y a une erreur.
+#cette fonction permet de demander à l'utilisateur de réécrire ses codes s'il y a une erreur.
 def re_ask_identity():
     return ask_identity
 
 def main(account):
     if ask_identity == True:
-        print("logging succesfully!")
+        print("Login succesfull!")
         terminale(account)
     else:
-        print("Logging error, please retry.")
+        print("Login error, please try again.")
         re_ask_identity()
 
 
+# LE TERMINAL NE PERMET PAS DE FAIRE DE MODIFICATIONS SUR LA BANK ACCOUNT
+# PHRASES A REFORMULER SANS MELANGER ANGLAIS ET FRANCAIS, VIREMENT ET RETRAIT SONT DES MOTS FRANCAIS!
+
+
+# PROPOSITION A AJOUTER AU TERMINALE POUR FAIRE DES VIREMENTS :
+
+""" if input in virement:
+        print(f/"Your old virement are {}\n"
+          "To make a 'virement', enter the value you want to 'virer'"
+"""
 
