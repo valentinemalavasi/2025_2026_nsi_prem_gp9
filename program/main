@@ -1,18 +1,20 @@
-
-virement = ["virement","virment","vrement","irement"]
+from ressource import data
+virement = ["payment"]
 sold = ["sold"]
-retrait = ["retait"]
+retrait = ["withdrawal"]
 
 #La fonction terminale permet de demander ce que veux regarder le client sur son compte bancaire.
 def terminale ():
     input("What do you want to know about your bank account?\n"
           "sold\n"
-          "virement\n"
-          "retrait")
+          "payment\n"
+          "withdrawal")
     if input in sold:
-        print(f/"Your sold is {}")
+        print(f/"Your sold is {sld}")
     if input in virement:
         print(f/"Your old virement are {}")
+    if input in virement and float and client:
+        input(f/"Are you sure to make payment of {float} to {client}?")
     if input in retrait:
         print (f/"Your old retrait are {}.")
 
@@ -40,6 +42,8 @@ def main(account):
 
 # LE TERMINAL NE PERMET PAS DE FAIRE DE MODIFICATIONS SUR LA BANK ACCOUNT
 # PHRASES A REFORMULER SANS MELANGER ANGLAIS ET FRANCAIS, VIREMENT ET RETRAIT SONT DES MOTS FRANCAIS!
+#virement = payment
+#retrait = withdrawal
 
 
 # PROPOSITION A AJOUTER AU TERMINALE POUR FAIRE DES VIREMENTS :
