@@ -38,18 +38,3 @@ def main(account):
     else:
         print("Login error, please try again.")
         re_ask_identity()
-
-
-# LE TERMINAL NE PERMET PAS DE FAIRE DE MODIFICATIONS SUR LA BANK ACCOUNT
-# PHRASES A REFORMULER SANS MELANGER ANGLAIS ET FRANCAIS, VIREMENT ET RETRAIT SONT DES MOTS FRANCAIS!
-#virement = payment
-#retrait = withdrawal
-
-
-# PROPOSITION A AJOUTER AU TERMINALE POUR FAIRE DES VIREMENTS :
-
-""" if input in virement:
-        print(f/"Your old virement are {}\n"
-          "To make a withdrawal, enter the value you want to withdraw"
-"""
-
