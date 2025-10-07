@@ -14,7 +14,7 @@ def terminale ():
     if input in virement:
         print(f"Your old payment are {}")
     if input in virement and float and client:
-        input(f/"Are you sure to make payment of {float} to {client}?")
+        input(f"Are you sure to make payment of {float} to {client}?")
     if input in retrait:
         print (f"Your old withdrowal are {}.")
 
@@ -50,6 +50,6 @@ def main(account):
 
 """ if input in virement:
         print(f/"Your old virement are {}\n"
-          "To make a 'virement', enter the value you want to 'virer'"
+          "To make a withdrawal, enter the value you want to withdraw"
 """
 
