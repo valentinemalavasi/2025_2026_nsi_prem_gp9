@@ -10,13 +10,13 @@ def terminale ():
           "payment\n"
           "withdrawal")
     if input in sold:
-        print(f/"Your sold is {sld}")
+        print(f"Your sold is {sld}")
     if input in virement:
-        print(f/"Your old virement are {}")
+        print(f"Your old payment are {}")
     if input in virement and float and client:
         input(f/"Are you sure to make payment of {float} to {client}?")
     if input in retrait:
-        print (f/"Your old retrait are {}.")
+        print (f"Your old withdrowal are {}.")
 
 #La fonction "ask_identity" permet de demander à l'utilisateur de rentrer les codes du client.
 def ask_identity ():
