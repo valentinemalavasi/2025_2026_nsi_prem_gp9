@@ -7,6 +7,15 @@ retrait = ["withdrawal"]
 def importation (ressource):
     for account in ressource:
         
+#La fonction montre la page permettant de faire des virements
+def show_payment_page :
+    print("To make a payment, enter 1. \n"
+              "To go back to main page, enter 2.")
+        if int(input) == 2 :
+            terminale
+        if int(input) == 1 :
+            pass
+
 #La fonction terminale permet de demander ce que veux regarder le client sur son compte bancaire.
 def terminale ():
     input(f"Hello {FName, Name}, what do you want to know about your bank account?\n"
@@ -16,11 +25,9 @@ def terminale ():
     if input in sold:
         print(f"Your sold is {sld}")
     if input in virement:
-        print(f"Your old payment are {}")
-    if input in virement and float and client:
-        input(f"Are you sure to make payment of {float} to {client}?")
+        show_payment_page
     if input in retrait:
-        print (f"Your old withdrowal are {}.")
+        print (f"Your old withdrawal are {}.")
 
 #La fonction "ask_identity" permet de demander à l'utilisateur de rentrer les codes du client.
 def ask_identity ():
