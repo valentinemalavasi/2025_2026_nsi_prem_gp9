@@ -6,28 +6,36 @@ retrait = ["withdrawal"]
 #Cette fonction importe les données du client dans les ressources.
 def importation (ressource):
     for account in ressource:
+        Name = account["name"]
+        FName = account["Fname"]
+        password = account["password"]
+        sld = account["sold"]
+        old_withdrawal = account["old_withdrawal"]
+        old_payment = account["old_payment"]
         
 #La fonction montre la page permettant de faire des virements
-def show_payment_page :
-    print("To make a payment, enter 1. \n"
-              "To go back to main page, enter 2.")
-        if int(input) == 2 :
-            terminale
-        if int(input) == 1 :
-            pass
+def show_payment_page ():
+    print("to make a payment, enter 1.\n"
+          "To go back to main page, enter 2.")
+    if int(input) == 1:
+        input("Enter the name of the recipient : ")
+        int(input("Enter the amount you want to transfer : "))
+        print("Payment done!")
+    if int(input) == 2:
+        terminale()
 
 #La fonction terminale permet de demander ce que veux regarder le client sur son compte bancaire.
 def terminale ():
-    input(f"Hello {FName, Name}, what do you want to know about your bank account?\n"
+    input(f"Hello {FName in importation}, {Name in importation}, what do you want to know about your bank account?\n"
           "sold\n"
           "payment\n"
           "withdrawal")
     if input in sold:
-        print(f"Your sold is {sld}")
+        print(f"Your sold is {sld in importation}")
     if input in virement:
         show_payment_page
     if input in retrait:
-        print (f"Your old withdrawal are {}.")
+        print (f"Your old withdrawal are {old_withdrawal in importation}.")
 
 #La fonction "ask_identity" permet de demander à l'utilisateur de rentrer les codes du client.
 def ask_identity ():
