@@ -1,0 +1,64 @@
+
+
+{
+    "canard":{
+        "Name" : "Canard",
+        "Fname" : "Tidak",
+        "sold" : 900,
+        "withdrawal" : [{"montant" : 1400, "date" : "2025-10-07", "from" : "unkwon"}, {"montant" : 1400, "date" : "2025-09-07", "from" : "unkwon"}] ,
+        "payement" : [{"montant" : 1200, "date" : "2025-09-23", "to" : "micromanie"}, {"montant" : 225, "date" : "2024-09-10", "to" : "trianglefour"}] ,
+        "password" : "TidakCanardsaya123"
+
+    }
+
+    "LE":{
+        "Name" : "Lardon",
+        "Fname" : "Edouard",
+        "sold" : 1000000000,
+        "withdrawal" : [{"montant" : 1400, "date" : "2025-10-07", "from" : "unkwon"}, {"montant" : 1400, "date" : "2025-09-07", "from" : "unkwon"}] ,
+        "payement" : [{"montant" : 1200, "date" : "2025-09-23", "to" : "micromanie"}, {"montant" : 225, "date" : "2024-09-10", "to" : "trianglefour"}] ,
+        "password" : "IamnotLardon2"
+
+    }
+
+    "MV":{
+        "Name" : "Maman",
+        "Fname" : "Voltmètre",
+        "sold" : -1000000000,
+        "withdrawal": [{"montant" : 1400, "date" : "2025-10-07", "from" : "unkwon"}, {"montant" : 1400, "date" : "2025-09-07", "from" : "unkwon"}],
+        "payement" :[{"montant" : 1200, "date" : "2025-09-23", "to" : "micromanie"}, {"montant" : 225, "date" : "2024-09-10", "to" : "trianglefour"}],
+        "password" : "Toujours présent"
+    
+    }
+
+    "clients2":{
+        "Name" : "Valence",
+        "Fname" : "Ampèrmètre",
+        "sold" : 31,
+        "withdrawal": [{"montant" : 1400, "date" : "2025-10-07", "from" : "unkwon"}, {"montant" : 1400, "date" : "2025-09-07", "from" : "unkwon"}],
+        "payement" :[{"montant" : 1200, "date" : "2025-09-23", "to" : "micromanie"}, {"montant" : 225, "date" : "2024-09-10", "to" : "trianglefour"}],
+        "password" : "Je suis batman"
+    
+    }
+
+    "clients3":{
+        "Name" : "Go",
+        "Fname" : "Echecs",
+        "sold" : -15.4,
+        "withdrawal": [{"montant" : 1400, "date" : "2025-10-07", "from" : "unkwon"}, {"montant" : 1400, "date" : "2025-09-07", "from" : "unkwon"}],
+        "payement" :[{"montant" : 1200, "date" : "2025-09-23", "to" : "micromanie"}, {"montant" : 225, "date" : "2024-09-10", "to" : "trianglefour"}],
+        "password" : "5eme dan de Dame"
+    
+    }
+
+    "NP":{
+        "Name" : "Non",
+        "Fname" : "Peut-être",
+        "sold" : -5000,
+        "withdrawal": [{"montant" : 1400, "date" : "2025-10-07", "from" : "unkwon"}, {"montant" : 1400, "date" : "2025-09-07", "from" : "unkwon"}],
+        "payement" :[{"montant" : 1200, "date" : "2025-09-23", "to" : "micromanie"}, {"montant" : 225, "date" : "2024-09-10", "to" : "trianglefour"}],
+        "password" : "Etre ou ne pas être tel est la question 1."
+    
+    }
+    
+}
