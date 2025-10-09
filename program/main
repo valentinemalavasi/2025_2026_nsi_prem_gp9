@@ -15,17 +15,21 @@ def importation (ressource):
         sld = account["sold"]
         old_withdrawal = account["old_withdrawal"]
         old_payment = account["old_payment"]
+
+def make_a_payment () :
+    recipient = input("Enter the name of the recipient : ")
+    transfer_amount = int(input("Enter the amount you want to transfer : "))
+    print("Payment done!")
         
 #La fonction montre la page permettant de faire des virements
 def go_to_payment_page ():
-    print("to make a payment, enter 1.\n"
+    print("To make a payment, enter 1.\n"
           "To go back to main page, enter 2.")
     if int(input) == 1:
-        input("Enter the name of the recipient : ")
-        int(input("Enter the amount you want to transfer : "))
-        print("Payment done!")
+        make_a_payment ()
     elif int(input) == 2:
-        main_page()
+        main_page ()
+
 def go_to_sold_page ():
     print(f"Your sold is {sld in importation}")
 
