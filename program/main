@@ -24,27 +24,27 @@ def go_to_payment_page ():
         input("Enter the name of the recipient : ")
         int(input("Enter the amount you want to transfer : "))
         print("Payment done!")
-    if int(input) == 2:
-        terminale()
-
-def go_to_sold_page :
+    elif int(input) == 2:
+        main_page()
+def go_to_sold_page ():
     print(f"Your sold is {sld in importation}")
 
-def go_to_withdrawal_page :
+
+def go_to_withdrawal_page () :
     print (f"Your old withdrawals are {old_withdrawal in importation}.")
 
-#La fonction terminale permet de demander ce que veux regarder le client sur son compte bancaire.
-def terminale ():
+#La fonction main_page permet de demander ce que veux regarder le client sur son compte bancaire.
+def main_page ():
     input(f"Hello {FName in importation}, {Name in importation}, what do you want to know about your bank account?\n"
           "sold\n"
           "payment\n"
           "withdrawal")
     if input in sold:
-        go_to_sold_page
+        go_to_sold_page()
     if input in virement:
-        go_to_payment_page
+        go_to_payment_page()
     if input in retrait:
-        go_to_withdrawal_page
+        go_to_withdrawal_page()
 
 #La fonction "ask_identity" permet de demander à l'utilisateur de rentrer les codes du client.
 def ask_identity ():
