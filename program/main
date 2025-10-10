@@ -35,11 +35,11 @@ def go_to_sold_page ():
 
 
 def go_to_withdrawal_page () :
-    print (f"Your old withdrawals are {old_withdrawal in importation}.\n"
+    print (f"Your old withdrawals are {old_withdrawal in importation}.\n")
            #entrez pin si vous voulez retirer argent)
     
     value_to_withdraw = int(input("Enter the value you want to withdraw : "))
-    new_sold ():
+    new_sold ()
     print(sld-value_to_withdraw)
 
 
