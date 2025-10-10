@@ -1,20 +1,11 @@
 # GIULIO TU PEUX AMELIORER LES FONCTIONS go_to_sold_page ET go_to_withdrowal_page POUR 
   # PERMETTRE DES ACTIONS COMME RETOURNER A L'ACCUEIL DEPUIS CETTE PAGE (comme dans la fonction go_to_payment_page)
 
-from ressource import data
+import tools_file
+
 virement = ["payment"]
 sold = ["sold"]
 retrait = ["withdrawal"]
-
-#Cette fonction importe les données du client dans les ressources.
-def importation (ressource):
-    for account in ressource:
-        Name = account["name"]
-        FName = account["Fname"]
-        password = account["password"]
-        sld = account["sold"]
-        old_withdrawal = account["old_withdrawal"]
-        old_payment = account["old_payment"]
 
 def make_a_payment () :
     recipient = input("Enter the name of the recipient : ")
@@ -31,11 +22,11 @@ def go_to_payment_page ():
         main_page ()
 
 def go_to_sold_page ():
-    print(f"Your sold is {sld in importation}")
+    print(f"Your sold is {sld}")
 
 
 def go_to_withdrawal_page () :
-    print (f"Your old withdrawals are {old_withdrawal in importation}.\n")
+    print (f"Your old withdrawals are {old_withdrawal}.\n")
            #entrez pin si vous voulez retirer argent)
     
     value_to_withdraw = int(input("Enter the value you want to withdraw : "))
@@ -47,7 +38,7 @@ def go_to_withdrawal_page () :
 
 #La fonction main_page permet de demander ce que veux regarder le client sur son compte bancaire.
 def main_page ():
-    input(f"Hello {FName in importation}, {Name in importation}, what do you want to know about your bank account?\n"
+    input(f"Hello {FName}, {Name}, what do you want to know about your bank account?\n"
           "sold\n"
           "payment\n"
           "withdrawal")
