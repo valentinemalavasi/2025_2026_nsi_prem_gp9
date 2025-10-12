@@ -16,7 +16,7 @@ def make_a_payment () :
         if input == 1 :
             pass
         elif input == 2 :
-            pass
+            go_to_payment_page
         
     
         
