@@ -1,6 +1,3 @@
-# GIULIO TU PEUX AMELIORER LES FONCTIONS go_to_sold_page ET go_to_withdrowal_page POUR 
-  # PERMETTRE DES ACTIONS COMME RETOURNER A L'ACCUEIL DEPUIS CETTE PAGE (comme dans la fonction go_to_payment_page)
-
 import tools_file
 
 virement = ["payment"]
