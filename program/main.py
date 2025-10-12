@@ -3,11 +3,22 @@ import tools_file
 virement = ["payment"]
 sold = ["sold"]
 retrait = ["withdrawal"]
+quitting_words = ["quit", "Quit", "QUIT", "quit "]
 
 def make_a_payment () :
-    recipient = input("Enter the name of the recipient : ")
-    transfer_amount = int(input("Enter the amount you want to transfer : "))
-    print("Payment done!")
+    recipient = input("Enter the name of the recipient (enter 'quit' to cancel): ")
+    payment_amount = input("Enter the amount you want to transfer (enter 'quit' to cancel): ")
+    if recipient or payment_amount in quitting_words :
+        go_to_payment_page
+    else :
+        input(f"Enter 1 to make a {payment_amount} € payment to {recipient}: \n"
+                "Enter 2 to cancel")
+        if input == 1 :
+            pass
+        elif input == 2 :
+            pass
+        
+    
         
 #La fonction montre la page permettant de faire des virements
 def go_to_payment_page ():
