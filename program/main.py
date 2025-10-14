@@ -16,16 +16,13 @@ def old_withdrawal ():
     for account in data:
         return account["withdrawal"]
     
-def new_sold_received ():
-    if n > 0:
-        sld = sld + n
-    if n < 0:
-        sld = sld + n 
-    if n == 0:
-        sld = sld + 0
+def new_sold_received (recipient, payment_amount):
+    sld = sld + n
+    return sld
 
-def new_sold_given ():
-    pass
+def new_sold_given (n):
+    sld = sld - n
+    return sld
 
 def make_a_payment () :
     recipient = input("Enter the name of the recipient (enter 'quit' to cancel): ")
@@ -36,7 +33,7 @@ def make_a_payment () :
         input(f"Enter 1 to make a {payment_amount} € payment to {recipient}: \n"
                 "Enter 2 to cancel")
         if input == 1 :
-            pass
+            new_sold_given, new_sold_received
         elif input == 2 :
             go_to_payment_page
         
