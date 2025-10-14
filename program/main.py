@@ -5,6 +5,26 @@ sold = ["sold"]
 retrait = ["withdrawal"]
 quitting_words = ["quit", "Quit", "QUIT", "quit "]
 
+
+#La fonction sld permet de retourner le solde du client
+def sld ():
+    for account in data:
+        return account["sold"]
+
+#La fonction old_withdrawal permet de retourner les anciens retraits du client
+def old_withdrawal ():
+    for account in data:
+        return account["withdrawal"]
+    
+def new_sold ():
+    if n > 0:
+        sld = sld + n
+    if n < 0:
+        sld = sld + n 
+    if n == 0:
+        sld = sld + 0
+
+
 def make_a_payment () :
     recipient = input("Enter the name of the recipient (enter 'quit' to cancel): ")
     payment_amount = input("Enter the amount you want to transfer (enter 'quit' to cancel): ")
