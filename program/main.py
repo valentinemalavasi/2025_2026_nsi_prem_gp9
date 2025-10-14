@@ -57,7 +57,11 @@ def go_to_withdrawal_page () :
     print (f"Your old withdrawals are {old_withdrawal}.\n")
            #entrez pin si vous voulez retirer argent)
     
-    value_to_withdraw = int(input("Enter the value you want to withdraw : "))
+def enter_pin ():
+    print("enter your pin")
+    if# pin correct peut proceder a la suite donc choisir la valeur de withdraw
+
+ def value_to_withdraw = int(input("Enter the value you want to withdraw : "))
     new_sold ()
     print(sld-value_to_withdraw)
 
