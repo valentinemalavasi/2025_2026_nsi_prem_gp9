@@ -16,7 +16,7 @@ def old_withdrawal ():
     for account in data:
         return account["withdrawal"]
     
-def new_sold ():
+def new_sold_received ():
     if n > 0:
         sld = sld + n
     if n < 0:
@@ -24,6 +24,8 @@ def new_sold ():
     if n == 0:
         sld = sld + 0
 
+def new_sold_given ():
+    pass
 
 def make_a_payment () :
     recipient = input("Enter the name of the recipient (enter 'quit' to cancel): ")
@@ -57,7 +59,11 @@ def go_to_withdrawal_page () :
     print (f"Your old withdrawals are {old_withdrawal}.\n")
            #entrez pin si vous voulez retirer argent)
     
-    value_to_withdraw = int(input("Enter the value you want to withdraw : "))
+def enter_pin ():
+    print("enter your pin")
+    if# pin correct peut proceder a la suite donc choisir la valeur de withdraw
+
+ def value_to_withdraw = int(input("Enter the value you want to withdraw : "))
     new_sold ()
     print(sld-value_to_withdraw)
 
