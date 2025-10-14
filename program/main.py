@@ -61,11 +61,13 @@ def go_to_withdrawal_page () :
     
 def enter_pin ():
     print("enter your pin")
-    if# pin correct peut proceder a la suite donc choisir la valeur de withdraw
+    if pin in correct_pin(account):
+        pass
+    # pin correct peut proceder a la suite donc choisir la valeur de withdraw
 
- def value_to_withdraw = int(input("Enter the value you want to withdraw : "))
-    new_sold ()
-    print(sld-value_to_withdraw)
+def vnew_sold ():
+   value_to_withdraw = int(input("Enter the value you want to withdraw : "))
+   print(sld-value_to_withdraw)
 
 def exit_system():
     return main(account)
