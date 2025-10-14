@@ -41,6 +41,8 @@ def go_to_withdrawal_page () :
     new_sold ()
     print(sld-value_to_withdraw)
 
+def exit_system():
+    return main(account)
 
  
 
@@ -56,6 +58,8 @@ def main_page ():
         go_to_payment_page()
     if input in retrait:
         go_to_withdrawal_page()
+    if input in quitting_words:
+        exit_system()
 
 #La fonction "ask_identity" permet de demander à l'utilisateur de rentrer les codes du client.
 def ask_identity ():
