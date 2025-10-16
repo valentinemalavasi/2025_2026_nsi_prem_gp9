@@ -15,13 +15,16 @@ def sld ():
 def old_withdrawal ():
     for account in data:
         return account["withdrawal"]
-    
+
+# FONCTION a retravailler et connecter solde aux comptes 
 def new_sold_received (recipient, payment_amount):
     sld = sld + n
     return sld
 
 def new_sold_given (n):
     sld = sld - n
+    if sld < 0 :
+        print ("Vous êtes dans le rouge ")
     return sld
 
 def make_a_payment () :
@@ -34,6 +37,7 @@ def make_a_payment () :
                 "Enter 2 to cancel")
         if input == 1 :
             new_sold_given, new_sold_received
+            print ("payment made !")
         elif input == 2 :
             go_to_payment_page
         
