@@ -68,10 +68,12 @@ def go_to_withdrawal_page () :
            #entrez pin si vous voulez retirer argent)
     
 def enter_pin ():
-    print("enter your pin")
-    if pin in correct_pin(account):
-        pass
-    # pin correct peut proceder a la suite donc choisir la valeur de withdraw
+    tentative = int(input("enter your pin"))
+    pin=
+    while tentative != pin:
+        tentative = int(input("reenter your pin"))
+        if pin==tentative:
+            print("code correct")
 
 def vnew_sold ():
    value_to_withdraw = int(input("Enter the value you want to withdraw : "))
