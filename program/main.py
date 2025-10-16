@@ -1,7 +1,6 @@
 # FONCTIONS new_sold_received ET new_sold_given voire
 
 import tools_file
-import python
 
 virement = ["payment"]
 sold = ["sold"]
@@ -69,7 +68,7 @@ def go_to_withdrawal_page () :
     
 def enter_pin ():
     tentative = int(input("enter your pin"))
-    pin=
+    pin= ""
     while tentative != pin:
         tentative = int(input("reenter your pin"))
         if pin==tentative:
