@@ -114,7 +114,7 @@ def re_ask_identity():
 def main(account):
     if ask_identity == True:
         print("Login succesfull!")
-        terminale(account)
+        main_page(account)
     else:
         print("Login error, please try again.")
         re_ask_identity()
