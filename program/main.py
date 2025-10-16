@@ -1,11 +1,16 @@
 # FONCTIONS new_sold_received ET new_sold_given voire
 
 import tools_file
+import python
 
 virement = ["payment"]
 sold = ["sold"]
 retrait = ["withdrawal"]
 quitting_words = ["quit", "Quit", "QUIT", "quit "]
+def data ():
+    with open ("tools_file"):
+        data = tools_file.PY
+
 
 
 #La fonction sld permet de retourner le solde du client
