@@ -1,3 +1,5 @@
+# FONCTIONS new_sold_received ET new_sold_given voire
+
 import tools_file
 
 virement = ["payment"]
@@ -16,7 +18,7 @@ def old_withdrawal ():
     for account in data:
         return account["withdrawal"]
 
-# FONCTION a retravailler et connecter solde aux comptes 
+    # FONCTION a retravailler et connecter solde aux comptes 
 def new_sold_received (recipient, payment_amount):
     sld = sld + n
     return sld
