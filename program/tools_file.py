@@ -1,7 +1,7 @@
 #importation du fichier data.json dans le dossier ressource
 import json
 
-with open("ressource_folder/data.json", "r", encoding="utf-8") as f:
+with open("c:/Users/valen/Documents/GitHub/2025_2026_nsi_prem_projet1_gp9/program/ressource_folder/data.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 def system (account):
