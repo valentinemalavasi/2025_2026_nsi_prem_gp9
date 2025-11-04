@@ -1,120 +1,143 @@
 # FONCTIONS new_sold_received ET new_sold_given voire
 
-import tools_file
+from  tools_file import *
 
-virement = ["payment"]
-sold = ["sold"]
-retrait = ["withdrawal"]
-quitting_words = ["quit", "Quit", "QUIT", "quit "]
-def data ():
-    with open ("tools_file"):
-        data = tools_file.PY
+# virement = ["payment"]
+# sold = ["sold"]
+# retrait = ["withdrawal"]
+
+# def data ():
+#     with open ("tools_file"):
+#         data = tools_file.PY
 
 
 
-#La fonction sld permet de retourner le solde du client
-def sld ():
-    for account in data:
-        return account["sold"]
+# #La fonction sld permet de retourner le solde du client
+# def sld ():
+#     for account in data:
+#         return account["sold"]
 
-#La fonction old_withdrawal permet de retourner les anciens retraits du client
-def old_withdrawal ():
-    for account in data:
-        return account["withdrawal"]
+# #La fonction old_withdrawal permet de retourner les anciens retraits du client
+# def old_withdrawal ():
+#     for account in data:
+#         return account["withdrawal"]
 
-    # FONCTION a retravailler et connecter solde aux comptes 
-def new_sold_received (recipient, payment_amount):
-    sld = sld + n
-    return sld
+#     # FONCTION a retravailler et connecter solde aux comptes 
+# def new_sold_received (recipient, payment_amount):
+#     sld = sld + n
+#     return sld
 
-def new_sold_given (n):
-    sld = sld - n
-    if sld < 0 :
-        print ("Vous êtes dans le rouge ")
-    return sld
+# def new_sold_given (n):
+#     sld = sld - n
+#     if sld < 0 :
+#         print ("Vous êtes dans le rouge ")
+#     return sld
 
-def make_a_payment () :
-    recipient = input("Enter the name of the recipient (enter 'quit' to cancel): ")
-    payment_amount = input("Enter the amount you want to transfer (enter 'quit' to cancel): ")
-    if recipient or payment_amount in quitting_words :
-        go_to_payment_page
-    else :
-        input(f"Enter 1 to make a {payment_amount} € payment to {recipient}: \n"
-                "Enter 2 to cancel")
-        if input == 1 :
-            new_sold_given, new_sold_received
-            print ("payment made !")
-        elif input == 2 :
-            go_to_payment_page
+# def make_a_payment () :
+#     recipient = input("Enter the name of the recipient (enter 'quit' to cancel): ")
+#     payment_amount = input("Enter the amount you want to transfer (enter 'quit' to cancel): ")
+#     if recipient or payment_amount in quitting_words :
+#         go_to_payment_page
+#     else :
+#         input(f"Enter 1 to make a {payment_amount} € payment to {recipient}: \n"
+#                 "Enter 2 to cancel")
+#         if input == 1 :
+#             new_sold_given, new_sold_received
+#             print ("payment made !")
+#         elif input == 2 :
+#             go_to_payment_page
         
     
         
 #La fonction montre la page permettant de faire des virements
-def go_to_payment_page ():
-    print("To make a payment, enter 1.\n"
-          "To go back to main page, enter 2.")
-    if int(input) == 1:
-        make_a_payment ()
-    elif int(input) == 2:
-        main_page ()
+# def go_to_payment_page ():
+#     print("To make a payment, enter 1.\n"
+#           "To go back to main page, enter 2.")
+#     if int(input) == 1:
+#         make_a_payment ()
+#     elif int(input) == 2:
+#         main_page ()
 
-def go_to_sold_page ():
-    print(f"Your sold is {sld}")
+# def go_to_sold_page ():
+#     print(f"Your sold is {sld}")
 
 
-def go_to_withdrawal_page () :
-    print (f"Your old withdrawals are {old_withdrawal}.\n")
-           #entrez pin si vous voulez retirer argent)
+# def go_to_withdrawal_page () :
+#     print (f"Your old withdrawals are {old_withdrawal}.\n")
+#            #entrez pin si vous voulez retirer argent)
     
-def enter_pin ():
-    tentative = int(input("enter your pin"))
-    pin= ""
-    while tentative != pin:
-        tentative = int(input("reenter your pin"))
-        if pin==tentative:
-            print("code correct")
+# def enter_pin ():
+#     tentative = int(input("enter your pin"))
+#     pin= ""
+#     while tentative != pin:
+#         tentative = int(input("reenter your pin"))
+#         if pin==tentative:
+#             print("code correct")
 
-def vnew_sold ():
-   value_to_withdraw = int(input("Enter the value you want to withdraw : "))
-   print(sld-value_to_withdraw)
+# def vnew_sold ():
+#    value_to_withdraw = int(input("Enter the value you want to withdraw : "))
+#    print(sld-value_to_withdraw)
 
-def exit_system():
-    return main(account)
+# def exit_system():
+#     return main(account)
 
  
 
 #La fonction main_page permet de demander ce que veux regarder le client sur son compte bancaire.
-def main_page ():
-    input(f"Hello {FName}, {Name}, what do you want to know about your bank account?\n"
-          "sold\n"
-          "payment\n"
-          "withdrawal")
-    if input in sold:
-        go_to_sold_page()
-    if input in virement:
-        go_to_payment_page()
-    if input in retrait:
-        go_to_withdrawal_page()
-    if input in quitting_words:
-        exit_system()
+# def main_page ():
+#     input(f"Hello {FName}, {Name}, what do you want to know about your bank account?\n"
+#           "sold\n"
+#           "payment\n"
+#           "withdrawal")
+#     if input in sold:
+#         go_to_sold_page()
+#     if input in virement:
+#         go_to_payment_page()
+#     if input in retrait:
+#         go_to_withdrawal_page()
+#     if input in quitting_words:
+#         exit_system()
+
+def is_a_valid_name (name):
+    return name in clients.keys ()
+
+def is_a_valid_first_name (name, first_name):
+    return first_name == clients [name]["Fname"]
+
+def is_a_valid_passwd (name, password):
+    return password == clients [name]["password"]
 
 #La fonction "ask_identity" permet de demander à l'utilisateur de rentrer les codes du client.
-def ask_identity ():
-    ask_name = input("name : ")
-    ask_first_name = input("Fname : ")
-    ask_password =input("password : ")
-    if (ask_name == "" and ask_first_name == "" and ask_password):
+def identity_is_valid (name, first_name, password):
+    if is_a_valid_name (name) \
+        and is_a_valid_first_name (name, first_name) \
+        and is_a_valid_passwd (name, password):
         return True
+    else:
+        return False
 
 
 #cette fonction permet de demander à l'utilisateur de réécrire ses codes s'il y a une erreur.
-def re_ask_identity():
-    return ask_identity
+# def re_ask_identity():
+#     return ask_identity
 
-def main(account):
-    if ask_identity == True:
+def add_amount (amount, name):
+    clients [name]["sold"] = clients [name]["sold"] + amount
+    
+def main ():  
+    # name = input ("name : ")
+    # first_name = input ("Fname : ")
+    # password =input ("password : ")
+    if identity_is_valid ("Canard", "Tidak", "TidakCanardsaya123"):
         print("Login succesfull!")
-        main_page(account)
+        montant_a_deposer = float (input ("Entrez un montant: "))
+        add_amount (montant_a_deposer, "Canard")
+        write_in_json_file (clients, "toto.json")
+        # main_page(account)
     else:
         print("Login error, please try again.")
-        re_ask_identity()
+        # re_ask_identity()
+
+
+clients = load_data_from_json ("data.json")
+main ()
