@@ -123,7 +123,7 @@ def main ():
     name = input ("name : ")
     first_name = input ("Fname : ")
     password =input ("password : ")
-    if identity_is_valid ("Name", "Fname", "password"):
+    if identity_is_valid (Name, Fname, password):
         print("Login succesfull!")
         #montant_a_deposer = float (input ("Entrez un montant: "))
         #add_amount (montant_a_deposer, "Canard")
