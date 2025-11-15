@@ -1,6 +1,7 @@
 # FONCTIONS new_sold_received ET new_sold_given voire
 
 from  tools_file import *
+from data import *
 
 virement = ["payment"]
 sold = ["sold"]
@@ -116,11 +117,6 @@ def identity_is_valid (name, first_name, password):
     else:
         return False
 
-
-#cette fonction permet de demander à l'utilisateur de réécrire ses codes s'il y a une erreur.
-def re_ask_identity():
-    return ask_identity
-
 def add_amount (amount, name):
     clients [name]["sold"] = clients [name]["sold"] + amount
     
@@ -136,7 +132,7 @@ def main ():
         main_page(account)
     else:
         print("Login error, please try again.")
-        re_ask_identity()
+        main()
 
 
 clients = load_data_from_json ("data.json")
