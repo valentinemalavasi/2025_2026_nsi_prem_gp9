@@ -84,7 +84,7 @@ def exit_system():
  
 
 #La fonction main_page permet de demander ce que veux regarder le client sur son compte bancaire.
-def main_page ():
+def main_page (account):
     next_action = input(f"Hello {FName}, {Name}, what do you want to know about your bank account?\n"
           "1.sold\n"
           "2.payment\n"
