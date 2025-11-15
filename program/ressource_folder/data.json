@@ -1,8 +1,12 @@
 {
-    "Edgar": {
-        "Name": "Lefauconnier",
-        "Fname": "Edgar",
-        "pin": 114512
-    }
+    "Canard":{
+        "Name" : "Canard",
+        "Fname" : "Tidak",
+        "sold" : 900,
+        "withdrawal" : [{"montant" : 1400, "date" : "2025-10-07", "from" : "unkwon"}, {"montant" : 1400, "date" : "2025-09-07", "from" : "unkwon"}] ,
+        "payement" : [{"montant" : 1200, "date" : "2025-09-23", "to" : "micromanie"}, {"montant" : 225, "date" : "2024-09-10", "to" : "trianglefour"}] ,
+        "password" : "TidakCanardsaya123" ,
+        "pin": 2891
+
     
 }
