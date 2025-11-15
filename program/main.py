@@ -1,5 +1,3 @@
-# FONCTIONS new_sold_received ET new_sold_given voire
-
 from  tools_file import *
 from data import *
 
