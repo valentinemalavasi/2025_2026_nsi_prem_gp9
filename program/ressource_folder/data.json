@@ -10,3 +10,15 @@
 
     
 }
+{
+    "Clash":{
+        "Name" : "Clash",
+        "Fname" : "Royal",
+        "sold" : 10000,
+        "withdrawal" : [{"montant" : 3000, "date" : "2025-06-07", "from" : "unkwon"}, {"montant" : 5000, "date" : "2025-02-09", "from" : "unkwon"}] ,
+        "payement" : [{"montant" : 1000, "date" : "2025-07-23", "to" : "sony"}, {"montant" : 225, "date" : "2024-11-10", "to" : "carrefour"}] ,
+        "password" : "ClashRoyalBG" ,
+        "pin": 1515
+
+    
+}
