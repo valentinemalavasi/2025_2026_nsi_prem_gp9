@@ -85,17 +85,17 @@ def exit_system():
 
 #La fonction main_page permet de demander ce que veux regarder le client sur son compte bancaire.
 def main_page ():
-    input(f"Hello {FName}, {Name}, what do you want to know about your bank account?\n"
-          "sold\n"
-          "payment\n"
-          "withdrawal")
-    if input in sold:
+    next_action = input(f"Hello {FName}, {Name}, what do you want to know about your bank account?\n"
+          "1.sold\n"
+          "2.payment\n"
+          "3.withdrawal")
+    if next_action == 1 :
         go_to_sold_page()
-    if input in virement:
+    elif next_action == 2 :
         go_to_payment_page()
-    if input in retrait:
+    elif next_action == 3 :
         go_to_withdrawal_page()
-    if input in quitting_words:
+    elif next_action in quitting_words:
         exit_system()
 
 def is_a_valid_name (name):
