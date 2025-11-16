@@ -1,13 +1,13 @@
-from  tools_file import *
-from data import *
 
 virement = ["payment"]
 sold = ["sold"]
 retrait = ["withdrawal"]
 
-def data ():
-    with open ("tools_file","r"):
-        return data = tools_file.PY
+def opener ():
+    with open ("tools_file.py","r") as f:
+        return 
+    with open ("data.py", "r") as f:
+        pass
 
 
 #La fonction sld permet de retourner le solde du client
@@ -132,5 +132,5 @@ def main ():
         main()
 
 
-clients = load_data_from_json ("data.json")
+clients = opener()
 main ()
