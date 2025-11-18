@@ -5,9 +5,9 @@ retrait = ["withdrawal"]
 
 def opener ():
     with open ("tools_file.py","r") as f:
-        return 
+        return tools_file = "tools_file.py"
     with open ("data.py", "r") as f:
-        pass
+        return data = "data.py"
 
 
 #La fonction sld permet de retourner le solde du client
