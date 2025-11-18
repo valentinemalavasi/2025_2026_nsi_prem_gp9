@@ -1,3 +1,4 @@
+"""
 
 virement = ["payment"]
 sold = ["sold"]
@@ -134,3 +135,5 @@ def main ():
 
 clients = opener()
 main ()
+
+"""
