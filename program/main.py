@@ -1,6 +1,6 @@
-virement = ["payment"]
-sold = ["sold"]
-retrait = ["withdrawal"]
+from tools_file import*
+from data import*
+
 
 def opener ():
     with open ("tools_file.py","r") as f:
