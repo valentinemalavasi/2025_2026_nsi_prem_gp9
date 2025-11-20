@@ -63,7 +63,7 @@ def go_to_sold_page ():
 
 
 def show_withdrawal_history():
-    print("\n--- Withdrawal history ---")
+    print("\n Withdrawal history ")
         for entry in clients[current_user]["withdrawal"]:
         print(f"- {entry['montant']}€ on {entry['date']} from {entry['from']}")
     print("\n")
