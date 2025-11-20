@@ -6,7 +6,7 @@ NEPLAZ Giulio
 
 TOTO'S BANK
 
-Manual of utilisation
+Utilisation manual
 Welcome to Toto bank. Here’s our user guide to help you understand our human to machine interface.
 Our system gives you the possibility to:
 -	consult your bank account (sold, withdrawals and payments)
@@ -24,5 +24,18 @@ We thank you for having chosen to trust our company, Toto bank wishes you a grea
 
 Dev Licence
 
-This project is the base of a system of an Automatic Distributor of Money for the Toto's Bank. For his functioment, the main fonctiun ask to the user to enter his informations like Name and password. When he enter his informations, it send it to an other function that check if his informations is on the base data. If the entered clients information are false or corrupted, the checking fuction return to the main functiun that to reask informations. If the user informations are correct, it propose different think: make a withdraw or the make a payment. To make a withdraw, it called the function that ask how many it want to withdraw. If the valor is different to a a number that could be divised by 5 or 10, without a coma and valors after the coma and that the user have the money on his bank informations. It divise in bank money and return to the user different bank distribution of bank money. For the payment, a function ask to the user to enter value and a person to send this money. If the value is correct, with maximum two Numbers after the coma, and the user has the som on his account, it send it to the other personn.
+This project is the foundation of an Automatic Money Distributor system for Toto’s Bank. For its operation, the main function asks the user to enter their information, such as name and password. Once entered, this information is sent to another function that checks whether it exists in the database.
+If the client’s information is false or corrupted, the checking function returns to the main function, which asks for the information again.
+If the information is correct, the system offers different options: making a withdrawal or making a payment.
 
+Withdrawal
+For a withdrawal, the function asks the user how much they want to withdraw.
+If the amount is not divisible by 5 or 10,
+if it contains a decimal point or digits after the decimal,
+or if the client does not have enough funds in their account, then the operation is refused.
+Otherwise, the system breaks down the amount into banknotes and returns to the user different possible distributions of bills.
+
+Payment
+For a payment, the function asks the user to enter the amount and the recipient.
+If the amount is valid (with a maximum of two digits after the decimal point)
+and if the client has sufficient funds in their account, then the system transfers the money to the specified person.
