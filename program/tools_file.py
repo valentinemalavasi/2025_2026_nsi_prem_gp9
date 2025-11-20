@@ -14,23 +14,16 @@ def write_in_json_file (data, json_file):
 
 import json
 """
-
+import data.json
 ressource_folder = "ressource_folder/"
+json_file = "data.json/"
 
-def load_data_from_json(json_file):
-    # ❌ Ancien code :
-    # with open (json_file in ressource_folder, "r") as f:
-
-    # ✔️ Correction : concaténation correcte du chemin
+def load_data_from_json(data.json_file):
     with open(ressource_folder + json_file, "r") as f:
         data = data.json.load(f)
     return data
 
 
 def write_in_json_file(data, json_file):
-    # ❌ Ancien code :
-    # with open (json_file in ressource_folder, "w") as f:
-
-    # ✔️ Correction : concaténation correcte du chemin
     with open(ressource_folder + json_file, "w") as f:
         data.json.dump(data, f, indent=4)
