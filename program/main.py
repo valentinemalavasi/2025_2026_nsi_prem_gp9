@@ -22,6 +22,30 @@ def old_withdrawal ():
     for account in data:
         return account["withdrawal"]
 
+def make_withdrawal():
+    print("Enter PIN to continue.")
+    pin = clients[current_user]["pin"]
+    attempt = int(input("PIN : "))
+    while attempt != pin:
+        print("Wrong PIN, try again.")
+        attempt = int(input("PIN : "))
+
+    amount = int(input("Amount to withdraw : "))
+
+    if amount > get_sold():
+        print("Insufficient funds!")
+        return
+    set_sold(get_sold() - amount)
+
+    clients[current_user]["withdrawal"].append({
+        "montant": amount,
+        "date": str(datetime.date.today()),
+        "from": "ATM"
+    })
+    write_in_json_file(clients, "data.json")
+    print("Withdrawal successful.")
+
+
     # FONCTION a retravailler et connecter solde aux comptes 
 def new_sold_received (recipient, payment_amount):
     sld = sld + n
