@@ -1,0 +1,206 @@
+import json
+from data import quitting_words
+import datetime
+
+# =============================
+#        CHARGEMENT JSON
+# =============================
+
+def load_data_from_json(json_file):
+    with open(json_file, "r") as f:
+        return json.load(f)
+
+# On charge l’objet data.json et on ne garde que la partie "data"
+clients = load_data_from_json("data.json")["data"]
+
+# Variable globale pour retenir le client connecté
+current_user = None
+
+
+def write_in_json_file(clients_dict):
+    with open("data.json", "w") as f:
+        json.dump({"data": clients_dict}, f, indent=4)
+
+
+# =============================
+#       FONCTIONS SOLDE
+# =============================
+
+def get_sold():
+    return clients[current_user]["sold"]
+
+def set_sold(new_value):
+    clients[current_user]["sold"] = new_value
+    write_in_json_file(clients)
+
+
+# =============================
+#      FONCTIONS RETRAITS
+# =============================
+
+def show_withdrawal_history():
+    print("\n--- Withdrawal history ---")
+
+    for entry in clients[current_user]["withdrawal"]:
+        print(f"- {entry['montant']}€ on {entry['date']} from {entry['from']}")
+
+    print("\n")
+
+
+def make_withdrawal():
+    print("Enter PIN to continue.")
+
+    pin = clients[current_user]["pin"]
+    attempt = int(input("PIN : "))
+
+    while attempt != pin:
+        print("Wrong PIN, try again.")
+        attempt = int(input("PIN : "))
+
+    amount = int(input("Amount to withdraw : "))
+
+    if amount > get_sold():
+        print("Insufficient funds!")
+        return
+
+    # Mise à jour du solde
+    set_sold(get_sold() - amount)
+
+    # Ajout dans l’historique
+    clients[current_user]["withdrawal"].append({
+        "montant": amount,
+        "date": str(datetime.date.today()),
+        "from": "ATM"
+    })
+
+    write_in_json_file(clients)
+    print("Withdrawal successful.")
+
+
+# =============================
+#      FONCTIONS PAYMENT
+# =============================
+
+def make_payment():
+    recipient = input("Recipient name (or 'quit' to cancel): ")
+
+    if recipient in quitting_words:
+        return
+
+    amount = int(input("Amount to transfer: "))
+
+    if amount > get_sold():
+        print("Insufficient funds!")
+        return
+
+    print(f"Confirm transfer {amount}€ to {recipient}?")
+    confirmation = input("Enter 1 to confirm, 2 to cancel: ")
+
+    if confirmation == "1":
+
+        set_sold(get_sold() - amount)
+
+        clients[current_user]["payment"].append({
+            "montant": amount,
+            "date": str(datetime.date.today()),
+            "to": recipient
+        })
+
+        write_in_json_file(clients)
+        print("Payment successful!")
+
+    else:
+        print("Payment canceled.")
+
+
+# =============================
+#         PAGES
+# =============================
+
+def go_to_sold_page():
+    print(f"\nYour balance is : {get_sold()} €\n")
+
+
+def go_to_payment_page():
+    print("1. Make a payment\n2. Back")
+
+    choice = input("Your choice : ")
+
+    if choice == "1":
+        make_payment()
+
+
+def go_to_withdrawal_page():
+    print("1. Withdraw money\n2. Show history\n3. Back")
+
+    choice = input("Your choice : ")
+
+    if choice == "1":
+        make_withdrawal()
+    elif choice == "2":
+        show_withdrawal_history()
+
+
+# =============================
+#       IDENTIFICATION
+# =============================
+
+def identity_is_valid(name, first_name, password):
+
+    if name in clients:
+        if clients[name]["Fname"] == first_name and clients[name]["password"] == password:
+            return True
+    return False
+
+
+# =============================
+#     PAGE PRINCIPALE
+# =============================
+
+def main_page():
+    print(f"\nHello {clients[current_user]['Fname']} {clients[current_user]['Name']}")
+
+    print("1. Balance")
+    print("2. Payments")
+    print("3. Withdrawals")
+    print("4. Quit")
+
+    action = input("Your choice : ")
+
+    if action == "1":
+        go_to_sold_page()
+    elif action == "2":
+        go_to_payment_page()
+    elif action == "3":
+        go_to_withdrawal_page()
+    elif action == "4":
+        print("Goodbye!")
+        exit()
+
+    main_page()  # retourne au menu après chaque action
+
+
+# =============================
+#         MAIN
+# =============================
+
+def main():
+    global current_user
+
+    print("=== LOGIN ===")
+
+    name = input("Name : ")
+    first_name = input("First name : ")
+    password = input("Password : ")
+
+    if identity_is_valid(name, first_name, password):
+        print("Login successful!")
+        current_user = name
+        main_page()
+
+    else:
+        print("Login failed. Try again.\n")
+        main()
+
+
+main()
