@@ -1,5 +1,3 @@
-"""
-
 virement = ["payment"]
 sold = ["sold"]
 retrait = ["withdrawal"]
@@ -141,5 +139,3 @@ def main ():
 
 clients = opener()
 main ()
-
-"""
