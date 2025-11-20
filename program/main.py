@@ -64,9 +64,12 @@ def go_to_sold_page ():
     print(f"Your sold is {sld}")
 
 
-def go_to_withdrawal_page () :
-    print (f"Your old withdrawals are {old_withdrawal}.\n")
-           #entrez pin si vous voulez retirer argent)
+def show_withdrawal_history():
+    print("\n--- Withdrawal history ---")
+        for entry in clients[current_user]["withdrawal"]:
+        print(f"- {entry['montant']}€ on {entry['date']} from {entry['from']}")
+    print("\n")
+
     
 def enter_pin ():
     tentative = int(input("enter your pin"))
