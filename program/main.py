@@ -12,9 +12,12 @@ def opener ():
 
 
 #La fonction sld permet de retourner le solde du client
-def sld ():
-    for account in data:
-        return account["sold"]
+def get_sold():
+    return clients[current_user]["sold"]
+
+def set_sold(new_value):
+    clients[current_user]["sold"] = new_value
+    write_in_json_file(clients, "data.json")
 
 #La fonction old_withdrawal permet de retourner les anciens retraits du client
 def old_withdrawal ():
