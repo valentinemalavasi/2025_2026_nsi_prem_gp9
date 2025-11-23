@@ -1,11 +1,26 @@
+# main.py
+
 import datetime
 import sys # Importé pour la sortie du programme
-from tools_file import load_data_from_json, write_in_json_file
-from data import quitting_words
+import json # NOUVELLE IMPORTATION NÉCESSAIRE POUR GÉRER LE JSON DIRECTEMENT
+from constants import quitting_words # CORRIGÉ pour utiliser constants.py
 
 # Constantes utilisées dans le programme
-DATA_FILE = "data.json"
+DATA_FILE = "program/data.json"
 NOTES = [500, 200, 100, 50, 20, 10, 5]
+
+# --- Fonctions d'outils intégrées pour éviter les problèmes d'importation ---
+def load_data_from_json (json_file):
+    """Charge les données depuis un fichier JSON."""
+    with open (json_file, "r") as f:
+        data = json.load(f)
+    return data
+
+def write_in_json_file (data, json_file):
+    """Écrit les données dans un fichier JSON avec une indentation de 4."""
+    with open (json_file, "w") as f:
+        json.dump (data, f, indent=4)
+# --------------------------------------------------------------------------
 
 class BankManager:
     """
@@ -16,9 +31,9 @@ class BankManager:
         """Initialise le gestionnaire de banque."""
         self.clients_data = {}
         self.current_user_name = None
-        self.load_clients_data()
+        self._load_clients_data()
 
-    def load_clients_data(self):
+    def _load_clients_data(self):
         """Charge les données des clients au démarrage du programme."""
         try:
             self.clients_data = load_data_from_json(DATA_FILE)
@@ -403,16 +418,17 @@ class BankManager:
             elif next_action == '4':
                 self.add_amount()
             elif next_action == '5':
-                print("\n Thank you for using our services. Goodbye!")
+                print("\n👋 Thank you for using our services. Goodbye!")
                 self.current_user_name = None
                 return
 
     def run(self):
         """Lance la boucle principale du programme."""
+        # Ligne 414 : Cette erreur ne devrait plus se produire si le chargement a réussi.
         if not self.clients_data:
             print("Program cannot run without client data.")
             sys.exit(1)
-
+            
         while True:
             if self.handle_login():
                 self.main_page()
