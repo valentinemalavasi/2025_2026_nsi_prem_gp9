@@ -1,5 +1,3 @@
-# main.py
-
 import datetime
 import sys # Importé pour la sortie du programme
 from tools_file import load_data_from_json, write_in_json_file
