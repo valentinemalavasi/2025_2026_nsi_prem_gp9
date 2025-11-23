@@ -18,9 +18,9 @@ class BankManager:
         """Initialise le gestionnaire de banque."""
         self.clients_data = {}
         self.current_user_name = None
-        self._load_clients_data()
+        self.load_clients_data()
 
-    def _load_clients_data(self):
+    def load_clients_data(self):
         """Charge les données des clients au démarrage du programme."""
         try:
             self.clients_data = load_data_from_json(DATA_FILE)
