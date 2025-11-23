@@ -51,19 +51,19 @@ class BankManager:
 
     # --- Fonctions de lecture/écriture du solde (renommées) ---
 
-    def get_sold(self):
-        """Retourne le solde du client actuel (anciennement get_sold)."""
+    def get_balance(self):
+        """Retourne le balancee du client actuel (anciennement get_balance)."""
         if self.current_user_name:
-            return self.clients_data[self.current_user_name]["sold"]
+            return self.clients_data[self.current_user_name]["balance"]
         return 0
 
-    def set_sold(self, new_value):
-        """Met à jour le solde du client actuel et sauvegarde les données (anciennement set_sold)."""
+    def set_balance(self, new_value):
+        """Met à jour le solde du client actuel et sauvegarde les données (anciennement set_balance)."""
         if self.current_user_name in self.clients_data:
-            self.clients_data[self.current_user_name]["sold"] = new_value
+            self.clients_data[self.current_user_name]["balance"] = new_value
             self._save_clients_data()
         else:
-            print("Error: Current user not identified for setting sold.")
+            print("Error: Current user not identified for setting balance.")
 
     # --- Authentification (noms conservés) ---
 
@@ -107,9 +107,9 @@ class BankManager:
 
     # --- 3. Consultation du Solde (renommée) ---
 
-    def go_to_sold_page(self):
+    def go_to_balance_page(self):
         """Affiche le solde du client actuel (anciennement show_balance)."""
-        balance = self.get_sold()
+        balance = self.get_balance()
         print(f"\n💰 Your current balance is: {balance} €")
 
     # --- 1. Virement Bancaire (renommée) ---
@@ -139,21 +139,21 @@ class BankManager:
                     print("Transfer amount must be positive.")
                     continue
 
-                current_sold = self.get_sold()
-                if amount > current_sold:
-                    print(f"Insufficient funds! Your balance is {current_sold} €.")
+                current_balance = self.get_balance()
+                if amount > current_balance:
+                    print(f"Insufficient funds! Your balance is {current_balance} €.")
                     return
 
                 if not self._check_pin():
                     print("Transfer canceled due to incorrect PIN.")
                     return
 
-                # 1. Mise à jour de l'émetteur (utilise set_sold)
-                self.set_sold(current_sold - amount)
+                # 1. Mise à jour de l'émetteur (utilise set_balance)
+                self.set_balance(current_balance - amount)
 
-                # 2. Mise à jour du destinataire (doit modifier directement car set_sold agit sur l'utilisateur courant)
-                recipient_sold = self.clients_data[recipient_name]["sold"]
-                self.clients_data[recipient_name]["sold"] = recipient_sold + amount
+                # 2. Mise à jour du destinataire (doit modifier directement car set_balance agit sur l'utilisateur courant)
+                recipient_balance = self.clients_data[recipient_name]["balance"]
+                self.clients_data[recipient_name]["balance"] = recipient_balance + amount
 
                 # 3. Enregistrement des transactions (historique)
                 self._log_transaction(
@@ -170,7 +170,7 @@ class BankManager:
                 )
 
                 self._save_clients_data() # Sauvegarde après modification du destinataire et logs
-                self.go_to_sold_page()
+                self.go_to_balance_page()
                 break
 
             except ValueError:
@@ -193,9 +193,9 @@ class BankManager:
                     print("Withdrawal amount must be a positive multiple of 5.")
                     continue
 
-                current_sold = self.get_sold()
-                if amount > current_sold:
-                    print(f"Insufficient funds! Your balance is {current_sold} €.")
+                current_balance = self.get_balance()
+                if amount > current_balance:
+                    print(f"Insufficient funds! Your balance is {current_balance} €.")
                     return
 
                 if not self._check_pin():
@@ -206,7 +206,7 @@ class BankManager:
                     return
 
                 # Effectuer le retrait
-                self.set_sold(current_sold - amount)
+                self.set_balance(current_balance - amount)
 
                 # Enregistrement de la transaction
                 self._log_transaction(
@@ -216,7 +216,7 @@ class BankManager:
                     from_source="ATM Withdrawal"
                 )
 
-                self.go_to_sold_page()
+                self.go_to_balance_page()
                 break
 
             except ValueError:
@@ -238,8 +238,8 @@ class BankManager:
                     continue
 
                 # Mise à jour du solde
-                current_sold = self.get_sold()
-                self.set_sold(current_sold + deposit_amount)
+                current_balance = self.get_balance()
+                self.set_balance(current_balance + deposit_amount)
 
                 # Enregistrement de la transaction
                 self._log_transaction(
@@ -249,7 +249,7 @@ class BankManager:
                     from_source="ATM Deposit"
                 )
 
-                self.go_to_sold_page()
+                self.go_to_balance_page()
                 break
 
             except ValueError:
@@ -414,7 +414,7 @@ class BankManager:
             elif next_action == '2':
                 self.go_to_withdrawal_page()
             elif next_action == '3':
-                self.go_to_sold_page()
+                self.go_to_balance_page()
             elif next_action == '4':
                 self.add_amount()
             elif next_action == '5':
