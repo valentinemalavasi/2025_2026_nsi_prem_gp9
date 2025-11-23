@@ -7,7 +7,7 @@ from constants import quitting_words # CORRIGÉ pour utiliser constants.py
 
 # Constantes utilisées dans le programme
 DATA_FILE = "program/data.json"
-NOTES = [500, 200, 100, 50, 20, 10, 5]
+NOTES = [50, 20, 10]
 
 # --- Fonctions d'outils intégrées pour éviter les problèmes d'importation ---
 def load_data_from_json (json_file):
@@ -184,13 +184,13 @@ class BankManager:
 
         while True:
             try:
-                amount_str = input("Enter the amount to withdraw (multiple of 5, or 'quit'): ").strip()
+                amount_str = input("Enter the amount to withdraw (multiple of 10, or 'quit'): ").strip()
                 if amount_str.lower() in quitting_words: return
 
                 amount = int(amount_str)
 
-                if amount <= 0 or amount % 5 != 0:
-                    print("Withdrawal amount must be a positive multiple of 5.")
+                if amount <= 0 or amount % 10 != 0:
+                    print("Withdrawal amount must be a positive multiple of 10.")
                     continue
 
                 current_balance = self.get_balance()
@@ -316,14 +316,7 @@ class BankManager:
             remaining = amount
             combo2 = {}
             temp_amount = amount
-            for note in [500, 200, 100]:
-                count = temp_amount // note
-                used = max(0, count // 2)
-                if used > 0:
-                    combo2[note] = used
-                    temp_amount -= used * note
-            remaining = temp_amount
-            for note in [50, 20, 10, 5]:
+            for note in [50, 20, 10]:
                 count = remaining // note
                 if count > 0:
                     combo2[note] = combo2.get(note, 0) + count
@@ -337,7 +330,7 @@ class BankManager:
             count_20 = remaining // 20
             combo3[20] = count_20
             remaining -= count_20 * 20
-            for note in [10, 5]:
+            for note in [10]:
                 count = remaining // note
                 if count > 0:
                     combo3[note] = count
@@ -348,7 +341,7 @@ class BankManager:
         if amount >= 50 and len(combinations) < max_combinations:
             remaining = amount
             combo4 = {}
-            for note in [50, 20, 10, 5]:
+            for note in [50, 20, 10]:
                 count = remaining // note
                 if count > 0:
                     combo4[note] = count
