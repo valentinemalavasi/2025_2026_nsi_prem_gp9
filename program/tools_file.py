@@ -1,8 +1,3 @@
-
-
-"""
-
-"""
 import json
 
 def load_data_from_json (json_file):
