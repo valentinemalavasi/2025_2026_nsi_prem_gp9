@@ -403,7 +403,7 @@ class BankManager:
             elif next_action == '4':
                 self.add_amount()
             elif next_action == '5':
-                print("\n👋 Thank you for using our services. Goodbye!")
+                print("\n Thank you for using our services. Goodbye!")
                 self.current_user_name = None
                 return
 
